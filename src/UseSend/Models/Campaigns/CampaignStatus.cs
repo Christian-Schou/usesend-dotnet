@@ -5,28 +5,21 @@ namespace UseSend;
 /// <summary>
 ///     Campaign lifecycle status.
 /// </summary>
+[JsonConverter(typeof(CampaignStatusConverter))]
 public enum CampaignStatus
 {
     /// <summary />
-    [JsonStringEnumMemberName("DRAFT")] Draft,
-
+    Draft,
     /// <summary />
-    [JsonStringEnumMemberName("SCHEDULED")]
     Scheduled,
-
     /// <summary />
-    [JsonStringEnumMemberName("SENDING")] Sending,
-
+    Sending,
     /// <summary />
-    [JsonStringEnumMemberName("SENT")] Sent,
-
+    Sent,
     /// <summary />
-    [JsonStringEnumMemberName("PAUSED")] Paused,
-
+    Paused,
     /// <summary />
-    [JsonStringEnumMemberName("CANCELLED")]
     Cancelled,
-
     /// <summary />
-    [JsonStringEnumMemberName("FAILED")] Failed
+    Failed
 }

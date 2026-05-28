@@ -5,22 +5,17 @@ namespace UseSend;
 /// <summary>
 ///     Domain verification status.
 /// </summary>
+[JsonConverter(typeof(DomainStatusConverter))]
 public enum DomainStatus
 {
     /// <summary />
-    [JsonStringEnumMemberName("NOT_STARTED")]
     NotStarted,
-
     /// <summary />
-    [JsonStringEnumMemberName("PENDING")] Pending,
-
+    Pending,
     /// <summary />
-    [JsonStringEnumMemberName("SUCCESS")] Success,
-
+    Success,
     /// <summary />
-    [JsonStringEnumMemberName("FAILED")] Failed,
-
+    Failed,
     /// <summary />
-    [JsonStringEnumMemberName("TEMPORARY_FAILURE")]
     TemporaryFailure
 }

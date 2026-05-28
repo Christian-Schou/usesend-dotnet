@@ -5,54 +5,35 @@ namespace UseSend;
 /// <summary>
 ///     Email status values returned by the useSend API.
 /// </summary>
+[JsonConverter(typeof(EmailStatusConverter))]
 public enum EmailStatus
 {
     /// <summary />
-    [JsonStringEnumMemberName("SCHEDULED")]
     Scheduled,
-
     /// <summary />
-    [JsonStringEnumMemberName("QUEUED")] Queued,
-
+    Queued,
     /// <summary />
-    [JsonStringEnumMemberName("SENT")] Sent,
-
+    Sent,
     /// <summary />
-    [JsonStringEnumMemberName("DELIVERY_DELAYED")]
     DeliveryDelayed,
-
     /// <summary />
-    [JsonStringEnumMemberName("BOUNCED")] Bounced,
-
+    Bounced,
     /// <summary />
-    [JsonStringEnumMemberName("REJECTED")] Rejected,
-
+    Rejected,
     /// <summary />
-    [JsonStringEnumMemberName("RENDERING_FAILURE")]
     RenderingFailure,
-
     /// <summary />
-    [JsonStringEnumMemberName("DELIVERED")]
     Delivered,
-
     /// <summary />
-    [JsonStringEnumMemberName("OPENED")] Opened,
-
+    Opened,
     /// <summary />
-    [JsonStringEnumMemberName("CLICKED")] Clicked,
-
+    Clicked,
     /// <summary />
-    [JsonStringEnumMemberName("COMPLAINED")]
     Complained,
-
     /// <summary />
-    [JsonStringEnumMemberName("FAILED")] Failed,
-
+    Failed,
     /// <summary />
-    [JsonStringEnumMemberName("CANCELLED")]
     Cancelled,
-
     /// <summary />
-    [JsonStringEnumMemberName("SUPPRESSED")]
     Suppressed
 }
