@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Title>UseSend ASP.NET Core Identity Email Sender</Title>
+        <Authors>Christian Schou Køster</Authors>
+        <Copyright>Copyright © Christian Schou Køster</Copyright>
+        <Description>ASP.NET Core Identity IEmailSender implementation backed by the useSend API.</Description>
+        <PackageTags>usesend;email;aspnetcore;identity;emailsender</PackageTags>
+        <PackageProjectUrl>https://github.com/Christian-Schou/usesend-dotnet/</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Christian-Schou/usesend-dotnet/</RepositoryUrl>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <IsPackable>true</IsPackable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\UseSend\UseSend.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+</Project>

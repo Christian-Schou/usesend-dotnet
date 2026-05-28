@@ -10,6 +10,7 @@ Unofficial .NET SDK for [useSend](https://usesend.com) — an open-source altern
 |---------|-------|-------------|
 | `UseSend` | [![NuGet](https://img.shields.io/nuget/v/UseSend.svg)](https://www.nuget.org/packages/UseSend) | Core SDK — send emails, manage domains, contacts, campaigns, and analytics |
 | `UseSend.FluentEmail` | [![NuGet](https://img.shields.io/nuget/v/UseSend.FluentEmail.svg)](https://www.nuget.org/packages/UseSend.FluentEmail) | [FluentEmail](https://github.com/lukencode/FluentEmail) sender backed by useSend |
+| `UseSend.Identity` | [![NuGet](https://img.shields.io/nuget/v/UseSend.Identity.svg)](https://www.nuget.org/packages/UseSend.Identity) | ASP.NET Core Identity `IEmailSender` / `IEmailSender<TUser>` backed by useSend |
 | `UseSend.Webhooks` | [![NuGet](https://img.shields.io/nuget/v/UseSend.Webhooks.svg)](https://www.nuget.org/packages/UseSend.Webhooks) | Webhook signature verification and typed event parsing |
 
 ---
@@ -60,6 +61,30 @@ builder.Services.AddUseSend(options =>
 | **Analytics** | Email time series, Reputation metrics |
 
 → [Full documentation](src/UseSend/README.md)
+
+---
+
+## UseSend.Identity
+
+ASP.NET Core Identity `IEmailSender` / `IEmailSender<TUser>` — drop-in email sending for scaffolded Identity pages (confirm email, reset password, etc.).
+
+```bash
+dotnet add package UseSend
+dotnet add package UseSend.Identity
+```
+
+```csharp
+// Program.cs — typed (scaffolded Identity pages)
+builder.Services.AddUseSend("us_your_api_token");
+builder.Services.AddUseSendIdentityEmailSender<ApplicationUser>(
+    fromAddress: "noreply@yourdomain.com",
+    fromName: "My App"
+);
+```
+
+Default HTML templates are provided for confirmation links, password reset links, and reset codes. Override any method by subclassing `UseSendEmailSender<TUser>`.
+
+→ [Full documentation](src/UseSend.Identity/README.md)
 
 ---
 

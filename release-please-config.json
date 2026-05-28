@@ -13,6 +13,10 @@
     "src/UseSend.Webhooks": {
       "component": "UseSend.Webhooks",
       "changelog-path": "CHANGELOG.md"
+    },
+    "src/UseSend.Identity": {
+      "component": "UseSend.Identity",
+      "changelog-path": "CHANGELOG.md"
     }
   }
 }
