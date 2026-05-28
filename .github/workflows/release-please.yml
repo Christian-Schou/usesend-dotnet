@@ -22,7 +22,7 @@ jobs:
       identity_version: ${{ steps.release.outputs['src/UseSend.Identity--version'] }}
 
     steps:
-      - uses: google-github-actions/release-please-action@v4
+      - uses: googleapis/release-please-action@v4
         id: release
         with:
           config-file: release-please-config.json
