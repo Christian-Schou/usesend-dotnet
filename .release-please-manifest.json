@@ -2,5 +2,5 @@
   "src/UseSend": "1.3.0",
   "src/UseSend.FluentEmail": "1.3.0",
   "src/UseSend.Webhooks": "1.3.0",
-  "src/UseSend.Identity": "1.0.0"
+  "src/UseSend.Identity": "1.1.0"
 }
