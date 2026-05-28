@@ -2,7 +2,7 @@
 
 Unofficial .NET SDK for [useSend](https://usesend.com) — an open-source alternative to Resend, SendGrid, Mailgun, and Postmark.
 
-[![CI](https://github.com/Christian-Schou/usesend-dotnet/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/usesend-dotnet/actions/workflows/ci.yml)
+[![CI](https://github.com/Christian-Schou/usesend-dotnet/actions/workflows/ci.yml/badge.svg)](https://github.com/Christian-Schou/usesend-dotnet/actions/workflows/ci.yml)
 
 ## Packages
 
@@ -147,8 +147,17 @@ Signatures use `HMAC-SHA256` with constant-time comparison and 5-minute replay p
 
 ## Requirements
 
-- .NET 10+
+- .NET 8 or .NET 10
 - A [useSend](https://usesend.com) account or self-hosted instance
+
+## Examples
+
+| Example | Description |
+|---------|-------------|
+| [ConsoleNoDi](examples/ConsoleNoDi) | Standalone usage without dependency injection |
+| [WebMinimalApi](examples/WebMinimalApi) | ASP.NET Core minimal API with DI |
+| [ConsoleSelfHosted](examples/ConsoleSelfHosted) | Custom host URL for self-hosted useSend |
+| [WebIdentity](examples/WebIdentity) | ASP.NET Core Identity — email confirmation and password reset |
 
 ## Contributing
 
