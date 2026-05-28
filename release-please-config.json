@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "simple",
+  "packages": {
+    "src/UseSend": {
+      "component": "UseSend",
+      "changelog-path": "CHANGELOG.md"
+    },
+    "src/UseSend.FluentEmail": {
+      "component": "UseSend.FluentEmail",
+      "changelog-path": "CHANGELOG.md"
+    },
+    "src/UseSend.Webhooks": {
+      "component": "UseSend.Webhooks",
+      "changelog-path": "CHANGELOG.md"
+    }
+  }
+}

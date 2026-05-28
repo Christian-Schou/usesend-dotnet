@@ -1,0 +1,72 @@
+name: Release Please
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      usesend_released: ${{ steps.release.outputs['UseSend--release_created'] }}
+      usesend_version: ${{ steps.release.outputs['UseSend--version'] }}
+      fluentemail_released: ${{ steps.release.outputs['UseSend.FluentEmail--release_created'] }}
+      fluentemail_version: ${{ steps.release.outputs['UseSend.FluentEmail--version'] }}
+      webhooks_released: ${{ steps.release.outputs['UseSend.Webhooks--release_created'] }}
+      webhooks_version: ${{ steps.release.outputs['UseSend.Webhooks--version'] }}
+
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  publish-usesend:
+    needs: release-please
+    if: needs.release-please.outputs.usesend_released == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet restore
+      - run: dotnet build --no-restore --configuration Release
+      - run: dotnet test --no-build --configuration Release --verbosity normal
+      - run: dotnet pack src/UseSend/UseSend.csproj --no-build --configuration Release /p:Version="${{ needs.release-please.outputs.usesend_version }}" --output ./nupkg
+      - run: dotnet nuget push ./nupkg/*.nupkg --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+  publish-fluentemail:
+    needs: release-please
+    if: needs.release-please.outputs.fluentemail_released == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet restore
+      - run: dotnet build --no-restore --configuration Release
+      - run: dotnet test --no-build --configuration Release --verbosity normal
+      - run: dotnet pack src/UseSend.FluentEmail/UseSend.FluentEmail.csproj --no-build --configuration Release /p:Version="${{ needs.release-please.outputs.fluentemail_version }}" --output ./nupkg
+      - run: dotnet nuget push ./nupkg/*.nupkg --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+  publish-webhooks:
+    needs: release-please
+    if: needs.release-please.outputs.webhooks_released == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet restore
+      - run: dotnet build --no-restore --configuration Release
+      - run: dotnet test --no-build --configuration Release --verbosity normal
+      - run: dotnet pack src/UseSend.Webhooks/UseSend.Webhooks.csproj --no-build --configuration Release /p:Version="${{ needs.release-please.outputs.webhooks_version }}" --output ./nupkg
+      - run: dotnet nuget push ./nupkg/*.nupkg --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
