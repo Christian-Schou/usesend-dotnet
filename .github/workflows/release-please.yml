@@ -12,12 +12,12 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     outputs:
-      usesend_released: ${{ steps.release.outputs['UseSend--release_created'] }}
-      usesend_version: ${{ steps.release.outputs['UseSend--version'] }}
-      fluentemail_released: ${{ steps.release.outputs['UseSend.FluentEmail--release_created'] }}
-      fluentemail_version: ${{ steps.release.outputs['UseSend.FluentEmail--version'] }}
-      webhooks_released: ${{ steps.release.outputs['UseSend.Webhooks--release_created'] }}
-      webhooks_version: ${{ steps.release.outputs['UseSend.Webhooks--version'] }}
+      usesend_released: ${{ steps.release.outputs['src/UseSend--release_created'] }}
+      usesend_version: ${{ steps.release.outputs['src/UseSend--version'] }}
+      fluentemail_released: ${{ steps.release.outputs['src/UseSend.FluentEmail--release_created'] }}
+      fluentemail_version: ${{ steps.release.outputs['src/UseSend.FluentEmail--version'] }}
+      webhooks_released: ${{ steps.release.outputs['src/UseSend.Webhooks--release_created'] }}
+      webhooks_version: ${{ steps.release.outputs['src/UseSend.Webhooks--version'] }}
 
     steps:
       - uses: google-github-actions/release-please-action@v4
