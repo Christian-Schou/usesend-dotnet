@@ -87,9 +87,10 @@ var client = UseSendClient.Create(); // reads USESEND_API_KEY
 
 ## Examples
 
-- [ConsoleNoDi](../../examples/ConsoleNoDi) — Standalone usage without dependency injection
-- [WebMinimalApi](../../examples/WebMinimalApi) — ASP.NET Core minimal API with DI
-- [ConsoleSelfHosted](../../examples/ConsoleSelfHosted) — Custom host URL for self-hosted useSend
+- [ConsoleNoDi](examples/ConsoleNoDi) — Standalone usage without dependency injection
+- [WebMinimalApi](examples/WebMinimalApi) — ASP.NET Core minimal API with DI
+- [ConsoleSelfHosted](examples/ConsoleSelfHosted) — Custom host URL for self-hosted useSend
+- [WebIdentity](examples/WebIdentity) — ASP.NET Core Identity with email confirmation and password reset
 
 ## Authentication
 
