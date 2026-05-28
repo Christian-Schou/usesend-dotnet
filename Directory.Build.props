@@ -1,0 +1,29 @@
+<Project>
+
+    <PropertyGroup>
+        <Version>1.0.0</Version>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Authors>Christian Schou Køster</Authors>
+        <Product>.NET client for useSend mail API</Product>
+        <Copyright>Copyright © Christian Schou Køster</Copyright>
+        <NeutralLanguage>en-US</NeutralLanguage>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/usesend/usesend-dotnet/</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/usesend/usesend-dotnet.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <DebugType>portable</DebugType>
+
+        <!-- Packaging properties -->
+        <IsPackable>false</IsPackable>
+        <PackageDescription>.NET client for useSend mail API</PackageDescription>
+        <PackageTags>email;usesend</PackageTags>
+
+        <!-- Debugging properties -->
+        <IncludeSymbols>true</IncludeSymbols>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+</Project>
