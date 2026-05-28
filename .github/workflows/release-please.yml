@@ -31,7 +31,7 @@ jobs:
     if: needs.release-please.outputs.usesend_released == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
@@ -48,7 +48,7 @@ jobs:
     if: needs.release-please.outputs.fluentemail_released == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
@@ -65,7 +65,7 @@ jobs:
     if: needs.release-please.outputs.webhooks_released == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
