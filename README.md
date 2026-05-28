@@ -1,4 +1,4 @@
-# usesend-dotnet
+# useSend .NET SDK
 
 Unofficial .NET SDK for [useSend](https://usesend.com) — an open-source alternative to Resend, SendGrid, Mailgun, and Postmark.
 
