@@ -1,0 +1,21 @@
+<Solution>
+    <Folder Name="/examples/">
+        <Project Path="examples/ConsoleNoDi/ConsoleNoDi.csproj" />
+        <Project Path="examples/ConsoleSelfHosted/ConsoleSelfHosted.csproj" />
+        <Project Path="examples/WebMinimalApi/WebMinimalApi.csproj" />
+    </Folder>
+    <Folder Name="/Solution Items/">
+        <File Path="Directory.Build.props" />
+        <File Path="README.md" />
+    </Folder>
+    <Folder Name="/src/">
+        <Project Path="src/UseSend/UseSend.csproj" />
+        <Project Path="src/UseSend.FluentEmail/UseSend.FluentEmail.csproj" />
+        <Project Path="src/UseSend.Webhooks/UseSend.Webhooks.csproj" />
+    </Folder>
+    <Folder Name="/tests/">
+        <Project Path="tests/UseSend.Tests/UseSend.Tests.csproj" />
+        <Project Path="tests/UseSend.FluentEmail.Tests/UseSend.FluentEmail.Tests.csproj" />
+        <Project Path="tests/UseSend.Webhooks.Tests/UseSend.Webhooks.Tests.csproj" />
+    </Folder>
+</Solution>
