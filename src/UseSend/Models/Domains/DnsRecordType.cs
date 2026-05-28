@@ -5,11 +5,11 @@ namespace UseSend;
 /// <summary>
 ///     DNS record type.
 /// </summary>
+[JsonConverter(typeof(DnsRecordTypeConverter))]
 public enum DnsRecordType
 {
     /// <summary />
-    [JsonStringEnumMemberName("MX")] Mx,
-
+    Mx,
     /// <summary />
-    [JsonStringEnumMemberName("TXT")] Txt
+    Txt
 }

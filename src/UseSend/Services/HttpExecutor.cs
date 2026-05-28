@@ -16,7 +16,6 @@ internal sealed class HttpExecutor
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         PropertyNameCaseInsensitive = true,
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-        Converters = { new JsonStringEnumConverter() }
     };
 
     internal readonly HttpClient Http;
