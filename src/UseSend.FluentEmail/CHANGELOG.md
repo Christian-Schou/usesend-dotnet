@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.FluentEmail-v1.2.0...UseSend.FluentEmail-v1.3.0) (2026-05-28)
+
+
+### Features
+
+* Add .NET 8 support and enum JSON converters ([#11](https://github.com/Christian-Schou/usesend-dotnet/issues/11)) ([6b9e96c](https://github.com/Christian-Schou/usesend-dotnet/commit/6b9e96cb605c5e78c8a9a62b7681b15bec122a38))
+
 ## [1.2.0](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.FluentEmail-v1.1.0...UseSend.FluentEmail-v1.2.0) (2026-05-28)
 
 

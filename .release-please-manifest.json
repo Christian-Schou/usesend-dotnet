@@ -1,5 +1,5 @@
 {
-  "src/UseSend": "1.2.0",
-  "src/UseSend.FluentEmail": "1.2.0",
-  "src/UseSend.Webhooks": "1.2.0"
+  "src/UseSend": "1.3.0",
+  "src/UseSend.FluentEmail": "1.3.0",
+  "src/UseSend.Webhooks": "1.3.0"
 }
