@@ -2,8 +2,11 @@
     <Folder Name="/examples/">
         <Project Path="examples/ConsoleNoDi/ConsoleNoDi.csproj" />
         <Project Path="examples/ConsoleSelfHosted/ConsoleSelfHosted.csproj" />
+        <Project Path="examples/WebHangfire/WebHangfire.csproj" />
         <Project Path="examples/WebIdentity/WebIdentity.csproj" />
+        <Project Path="examples/WebMassTransit/WebMassTransit.csproj" />
         <Project Path="examples/WebMinimalApi/WebMinimalApi.csproj" />
+        <Project Path="examples/WebTemporal/WebTemporal.csproj" />
     </Folder>
     <Folder Name="/Solution Items/">
         <File Path="Directory.Build.props" />

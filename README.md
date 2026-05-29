@@ -201,6 +201,9 @@ var html = await renderer.RenderAsync("Emails/Welcome", new WelcomeModel { Name 
 | [WebMinimalApi](examples/WebMinimalApi) | ASP.NET Core minimal API with DI |
 | [ConsoleSelfHosted](examples/ConsoleSelfHosted) | Custom host URL for self-hosted useSend |
 | [WebIdentity](examples/WebIdentity) | ASP.NET Core Identity — email confirmation and password reset |
+| [WebHangfire](examples/WebHangfire) | Background email jobs via [Hangfire](https://www.hangfire.io/) |
+| [WebMassTransit](examples/WebMassTransit) | Event-driven email via [MassTransit](https://masstransit.io/) `SendEmailCommand` consumer |
+| [WebTemporal](examples/WebTemporal) | Durable email workflow with [Temporal.io](https://temporal.io/) |
 
 ## Contributing
 
