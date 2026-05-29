@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PreserveCompilationContext>true</PreserveCompilationContext>
+        <Title>UseSend Razor Templating</Title>
+        <Authors>Christian Schou Køster</Authors>
+        <Copyright>Copyright © Christian Schou Køster</Copyright>
+        <Description>Razor template rendering support for the useSend .NET SDK — compile and render .cshtml email templates using RazorLight.</Description>
+        <PackageTags>usesend;email;razor;template;razorlight</PackageTags>
+        <PackageProjectUrl>https://github.com/Christian-Schou/usesend-dotnet/</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Christian-Schou/usesend-dotnet/</RepositoryUrl>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <IsPackable>true</IsPackable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="RazorLight" Version="2.3.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\UseSend\UseSend.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+</Project>

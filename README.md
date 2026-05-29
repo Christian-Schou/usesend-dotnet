@@ -12,6 +12,7 @@ Unofficial .NET SDK for [useSend](https://usesend.com) — an open-source altern
 | `UseSend.FluentEmail` | [![NuGet](https://img.shields.io/nuget/v/UseSend.FluentEmail.svg)](https://www.nuget.org/packages/UseSend.FluentEmail) | [FluentEmail](https://github.com/lukencode/FluentEmail) sender backed by useSend |
 | `UseSend.Identity` | [![NuGet](https://img.shields.io/nuget/v/UseSend.Identity.svg)](https://www.nuget.org/packages/UseSend.Identity) | ASP.NET Core Identity `IEmailSender` / `IEmailSender<TUser>` backed by useSend |
 | `UseSend.OpenTelemetry` | [![NuGet](https://img.shields.io/nuget/v/UseSend.OpenTelemetry.svg)](https://www.nuget.org/packages/UseSend.OpenTelemetry) | Distributed tracing (ActivitySource) and metrics (request count + duration) |
+| `UseSend.Razor` | [![NuGet](https://img.shields.io/nuget/v/UseSend.Razor.svg)](https://www.nuget.org/packages/UseSend.Razor) | Razor (.cshtml) template rendering via [RazorLight](https://github.com/toddams/RazorLight) |
 | `UseSend.Webhooks` | [![NuGet](https://img.shields.io/nuget/v/UseSend.Webhooks.svg)](https://www.nuget.org/packages/UseSend.Webhooks) | Webhook signature verification and typed event parsing |
 
 ---
