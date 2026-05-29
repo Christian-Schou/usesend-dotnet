@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -10,6 +12,14 @@ namespace UseSend;
 internal sealed class HttpExecutor
 {
     internal const string IdempotencyKeyHeader = "Idempotency-Key";
+
+    internal static readonly ActivitySource ActivitySource = new("UseSend");
+    internal static readonly Meter Meter = new("UseSend");
+    private static readonly Counter<long> _requestCounter =
+        Meter.CreateCounter<long>("usesend.client.requests", description: "Total useSend API requests.");
+    private static readonly Histogram<double> _requestDuration =
+        Meter.CreateHistogram<double>("usesend.client.request_duration", unit: "ms",
+            description: "Duration of useSend API requests.");
 
     internal static readonly JsonSerializerOptions JsonOptions = new()
     {
@@ -31,6 +41,12 @@ internal sealed class HttpExecutor
 
     internal async Task<UseSendResponse> Execute(HttpRequestMessage req, CancellationToken cancellationToken)
     {
+        var start = Stopwatch.GetTimestamp();
+        using var activity = ActivitySource.StartActivity(
+            $"{req.Method.Method} {req.RequestUri?.OriginalString}", ActivityKind.Client);
+        activity?.SetTag("http.method", req.Method.Method);
+        activity?.SetTag("http.url", req.RequestUri?.ToString());
+
         HttpResponseMessage resp;
 
         try
@@ -40,20 +56,25 @@ internal sealed class HttpExecutor
         }
         catch (TaskCanceledException)
         {
+            activity?.SetStatus(ActivityStatusCode.Error, "Request cancelled.");
             throw;
         }
         catch (Exception ex)
         {
+            activity?.SetStatus(ActivityStatusCode.Error, ex.Message);
+            RecordMetrics(req.Method.Method, 0, start);
             var oex = new UseSendException(0, null, ex.Message, ex);
-
             if (Throw) throw oex;
             return new UseSendResponse(oex);
         }
 
+        activity?.SetTag("http.status_code", (int)resp.StatusCode);
+        RecordMetrics(req.Method.Method, (int)resp.StatusCode, start);
+
         if (!resp.IsSuccessStatusCode)
         {
+            activity?.SetStatus(ActivityStatusCode.Error);
             var oex = await BuildException(resp, cancellationToken).ConfigureAwait(false);
-
             if (Throw) throw oex;
             return new UseSendResponse(oex);
         }
@@ -67,6 +88,12 @@ internal sealed class HttpExecutor
         Func<T1, T2> map,
         CancellationToken cancellationToken)
     {
+        var start = Stopwatch.GetTimestamp();
+        using var activity = ActivitySource.StartActivity(
+            $"{req.Method.Method} {req.RequestUri?.OriginalString}", ActivityKind.Client);
+        activity?.SetTag("http.method", req.Method.Method);
+        activity?.SetTag("http.url", req.RequestUri?.ToString());
+
         HttpResponseMessage resp;
 
         try
@@ -76,20 +103,25 @@ internal sealed class HttpExecutor
         }
         catch (TaskCanceledException)
         {
+            activity?.SetStatus(ActivityStatusCode.Error, "Request cancelled.");
             throw;
         }
         catch (Exception ex)
         {
+            activity?.SetStatus(ActivityStatusCode.Error, ex.Message);
+            RecordMetrics(req.Method.Method, 0, start);
             var oex = new UseSendException(0, null, ex.Message, ex);
-
             if (Throw) throw oex;
             return new UseSendResponse<T2>(oex);
         }
 
+        activity?.SetTag("http.status_code", (int)resp.StatusCode);
+        RecordMetrics(req.Method.Method, (int)resp.StatusCode, start);
+
         if (!resp.IsSuccessStatusCode)
         {
+            activity?.SetStatus(ActivityStatusCode.Error);
             var oex = await BuildException(resp, cancellationToken).ConfigureAwait(false);
-
             if (Throw) throw oex;
             return new UseSendResponse<T2>(oex);
         }
@@ -108,7 +140,6 @@ internal sealed class HttpExecutor
         {
             var oex = new UseSendException((int)resp.StatusCode, null, "Failed deserializing response: " + ex.Message,
                 ex);
-
             if (Throw) throw oex;
             return new UseSendResponse<T2>(oex);
         }
@@ -116,12 +147,20 @@ internal sealed class HttpExecutor
         if (obj == null)
         {
             var oex = new UseSendException((int)resp.StatusCode, null, "Empty response body.");
-
             if (Throw) throw oex;
             return new UseSendResponse<T2>(oex);
         }
 
         return new UseSendResponse<T2>(map(obj));
+    }
+
+
+    private static void RecordMetrics(string method, int statusCode, long startTimestamp)
+    {
+        var elapsed = Stopwatch.GetElapsedTime(startTimestamp).TotalMilliseconds;
+        var tags = new TagList { { "http.method", method }, { "http.status_code", statusCode } };
+        _requestCounter.Add(1, tags);
+        _requestDuration.Record(elapsed, tags);
     }
 
 
