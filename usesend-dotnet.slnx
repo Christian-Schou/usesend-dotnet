@@ -13,6 +13,7 @@
         <Project Path="src/UseSend/UseSend.csproj" />
         <Project Path="src/UseSend.FluentEmail/UseSend.FluentEmail.csproj" />
         <Project Path="src/UseSend.Identity/UseSend.Identity.csproj" />
+        <Project Path="src/UseSend.OpenTelemetry/UseSend.OpenTelemetry.csproj" />
         <Project Path="src/UseSend.Webhooks/UseSend.Webhooks.csproj" />
     </Folder>
     <Folder Name="/tests/">

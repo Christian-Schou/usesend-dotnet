@@ -11,6 +11,7 @@ Unofficial .NET SDK for [useSend](https://usesend.com) — an open-source altern
 | `UseSend` | [![NuGet](https://img.shields.io/nuget/v/UseSend.svg)](https://www.nuget.org/packages/UseSend) | Core SDK — send emails, manage domains, contacts, campaigns, and analytics |
 | `UseSend.FluentEmail` | [![NuGet](https://img.shields.io/nuget/v/UseSend.FluentEmail.svg)](https://www.nuget.org/packages/UseSend.FluentEmail) | [FluentEmail](https://github.com/lukencode/FluentEmail) sender backed by useSend |
 | `UseSend.Identity` | [![NuGet](https://img.shields.io/nuget/v/UseSend.Identity.svg)](https://www.nuget.org/packages/UseSend.Identity) | ASP.NET Core Identity `IEmailSender` / `IEmailSender<TUser>` backed by useSend |
+| `UseSend.OpenTelemetry` | [![NuGet](https://img.shields.io/nuget/v/UseSend.OpenTelemetry.svg)](https://www.nuget.org/packages/UseSend.OpenTelemetry) | Distributed tracing (ActivitySource) and metrics (request count + duration) |
 | `UseSend.Webhooks` | [![NuGet](https://img.shields.io/nuget/v/UseSend.Webhooks.svg)](https://www.nuget.org/packages/UseSend.Webhooks) | Webhook signature verification and typed event parsing |
 
 ---
@@ -142,6 +143,47 @@ Signatures use `HMAC-SHA256` with constant-time comparison and 5-minute replay p
 | Domain | `created`, `verified`, `updated`, `deleted` |
 
 → [Full documentation](src/UseSend.Webhooks/README.md)
+
+---
+
+## UseSend.OpenTelemetry
+
+Adds distributed tracing spans and metrics (request count + duration histogram) to every useSend API call.
+
+```bash
+dotnet add package UseSend.OpenTelemetry
+```
+
+```csharp
+builder.Services.AddOpenTelemetry()
+    .WithTracing(tracing => tracing
+        .AddUseSendInstrumentation()   // ActivitySource "UseSend"
+        .AddOtlpExporter())
+    .WithMetrics(metrics => metrics
+        .AddUseSendInstrumentation()   // Meter "UseSend"
+        .AddOtlpExporter());
+```
+
+→ [Full documentation](src/UseSend.OpenTelemetry/README.md)
+
+---
+
+## UseSend.Razor
+
+Compile and render strongly-typed Razor (.cshtml) templates as email HTML bodies using [RazorLight](https://github.com/toddams/RazorLight).
+
+```bash
+dotnet add package UseSend.Razor
+```
+
+```csharp
+builder.Services.AddUseSendRazor("/path/to/email/templates");
+
+// Inject IEmailTemplateRenderer and render before sending
+var html = await renderer.RenderAsync("Emails/Welcome", new WelcomeModel { Name = "Alice" });
+```
+
+→ [Full documentation](src/UseSend.Razor/README.md)
 
 ---
 

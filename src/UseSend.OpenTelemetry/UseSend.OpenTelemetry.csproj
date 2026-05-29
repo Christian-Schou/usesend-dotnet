@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Title>UseSend OpenTelemetry Instrumentation</Title>
+        <Authors>Christian Schou Køster</Authors>
+        <Copyright>Copyright © Christian Schou Køster</Copyright>
+        <Description>OpenTelemetry tracing and metrics instrumentation for the useSend .NET SDK.</Description>
+        <PackageTags>usesend;email;opentelemetry;tracing;metrics;observability</PackageTags>
+        <PackageProjectUrl>https://github.com/Christian-Schou/usesend-dotnet/</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Christian-Schou/usesend-dotnet/</RepositoryUrl>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <IsPackable>true</IsPackable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="OpenTelemetry" Version="1.11.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\UseSend\UseSend.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+</Project>
