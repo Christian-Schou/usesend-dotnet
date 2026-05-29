@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Webhooks-v1.3.1...UseSend.Webhooks-v1.3.2) (2026-05-29)
+
+
+### Bug Fixes
+
+* **deps:** Adjust DI Abstractions package versions per TFM ([#44](https://github.com/Christian-Schou/usesend-dotnet/issues/44)) ([ff41754](https://github.com/Christian-Schou/usesend-dotnet/commit/ff41754be04437d316d4d748588e3a44dce5b23f))
+
 ## [1.3.1](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Webhooks-v1.3.0...UseSend.Webhooks-v1.3.1) (2026-05-28)
 
 
