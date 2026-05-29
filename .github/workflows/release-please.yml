@@ -22,6 +22,8 @@ jobs:
       identity_version: ${{ steps.release.outputs['src/UseSend.Identity--version'] }}
       opentelemetry_released: ${{ steps.release.outputs['src/UseSend.OpenTelemetry--release_created'] }}
       opentelemetry_version: ${{ steps.release.outputs['src/UseSend.OpenTelemetry--version'] }}
+      razor_released: ${{ steps.release.outputs['src/UseSend.Razor--release_created'] }}
+      razor_version: ${{ steps.release.outputs['src/UseSend.Razor--version'] }}
 
     steps:
       - uses: googleapis/release-please-action@v4
@@ -113,4 +115,21 @@ jobs:
       - run: dotnet build --no-restore --configuration Release
       - run: dotnet test --no-build --configuration Release --verbosity normal
       - run: dotnet pack src/UseSend.OpenTelemetry/UseSend.OpenTelemetry.csproj --no-build --configuration Release /p:Version="${{ needs.release-please.outputs.opentelemetry_version }}" --output ./nupkg
+      - run: dotnet nuget push ./nupkg/*.nupkg --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+  publish-razor:
+    needs: release-please
+    if: needs.release-please.outputs.razor_released == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+      - run: dotnet restore
+      - run: dotnet build --no-restore --configuration Release
+      - run: dotnet test --no-build --configuration Release --verbosity normal
+      - run: dotnet pack src/UseSend.Razor/UseSend.Razor.csproj --no-build --configuration Release /p:Version="${{ needs.release-please.outputs.razor_version }}" --output ./nupkg
       - run: dotnet nuget push ./nupkg/*.nupkg --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate

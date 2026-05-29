@@ -22,5 +22,9 @@
       "component": "UseSend.OpenTelemetry",
       "changelog-path": "CHANGELOG.md"
     },
+    "src/UseSend.Razor": {
+      "component": "UseSend.Razor",
+      "changelog-path": "CHANGELOG.md"
+    }
   }
 }
