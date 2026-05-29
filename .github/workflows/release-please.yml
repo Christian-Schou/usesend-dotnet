@@ -26,7 +26,7 @@ jobs:
       razor_version: ${{ steps.release.outputs['src/UseSend.Razor--version'] }}
 
     steps:
-      - uses: googleapis/release-please-action@v4
+      - uses: googleapis/release-please-action@v5
         id: release
         with:
           config-file: release-please-config.json
