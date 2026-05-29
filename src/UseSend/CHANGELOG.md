@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend-v1.3.0...UseSend-v1.4.0) (2026-05-29)
+
+
+### Features
+
+* Add telemetry and metrics to HttpExecutor ([4e873b5](https://github.com/Christian-Schou/usesend-dotnet/commit/4e873b592aa64e4f5c53d3171d3abab3a11e8632))
+* **core:** Add telemetry and metrics to HttpExecutor ([#37](https://github.com/Christian-Schou/usesend-dotnet/issues/37)) ([4e873b5](https://github.com/Christian-Schou/usesend-dotnet/commit/4e873b592aa64e4f5c53d3171d3abab3a11e8632))
+
 ## [1.3.0](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend-v1.2.0...UseSend-v1.3.0) (2026-05-28)
 
 
