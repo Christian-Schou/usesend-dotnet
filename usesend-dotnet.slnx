@@ -22,6 +22,7 @@
         <Project Path="tests/UseSend.FluentEmail.Tests/UseSend.FluentEmail.Tests.csproj" />
         <Project Path="tests/UseSend.Identity.Tests/UseSend.Identity.Tests.csproj" />
         <Project Path="tests/UseSend.OpenTelemetry.Tests/UseSend.OpenTelemetry.Tests.csproj" />
+        <Project Path="tests/UseSend.Razor.Tests/UseSend.Razor.Tests.csproj" />
         <Project Path="tests/UseSend.Webhooks.Tests/UseSend.Webhooks.Tests.csproj" />
     </Folder>
 </Solution>
