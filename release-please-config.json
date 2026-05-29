@@ -22,6 +22,5 @@
       "component": "UseSend.OpenTelemetry",
       "changelog-path": "CHANGELOG.md"
     },
-    }
   }
 }
