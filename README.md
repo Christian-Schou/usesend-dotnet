@@ -226,6 +226,7 @@ Both `UseSend.Razor` and `UseSend.Fluid` implement the same `IEmailTemplateRende
 | [WebHangfire](examples/WebHangfire) | Background email jobs via [Hangfire](https://www.hangfire.io/) |
 | [WebMassTransit](examples/WebMassTransit) | Event-driven email via [MassTransit](https://masstransit.io/) `SendEmailCommand` consumer |
 | [WebTemporal](examples/WebTemporal) | Durable email workflow with [Temporal.io](https://temporal.io/) |
+| [WebFluid](examples/WebFluid) | Liquid (`.liquid`) email templates with [UseSend.Fluid](src/UseSend.Fluid) |
 
 ## Contributing
 

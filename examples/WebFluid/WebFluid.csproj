@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\UseSend\UseSend.csproj"/>
+        <ProjectReference Include="..\..\src\UseSend.Fluid\UseSend.Fluid.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="Templates\Emails\Welcome.liquid" CopyToOutputDirectory="PreserveNewest"/>
+        <None Update="Templates\Emails\PasswordReset.liquid" CopyToOutputDirectory="PreserveNewest"/>
+    </ItemGroup>
+
+</Project>
