@@ -18,7 +18,7 @@ public sealed class FluidEmailTemplateRenderer : IEmailTemplateRenderer
     /// </summary>
     public FluidEmailTemplateRenderer(FluidEmailTemplateOptions options)
     {
-        _options = options;
+        _options = options ?? throw new ArgumentNullException(nameof(options));
     }
 
     /// <inheritdoc />

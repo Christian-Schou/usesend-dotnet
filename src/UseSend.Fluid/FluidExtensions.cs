@@ -38,6 +38,8 @@ public static class FluidExtensions
         this IServiceCollection services,
         Action<FluidEmailTemplateOptions> configure)
     {
+        ArgumentNullException.ThrowIfNull(configure);
+
         var options = new FluidEmailTemplateOptions();
         configure(options);
 
