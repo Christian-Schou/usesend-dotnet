@@ -2,6 +2,7 @@
     <Folder Name="/examples/">
         <Project Path="examples/ConsoleNoDi/ConsoleNoDi.csproj" />
         <Project Path="examples/ConsoleSelfHosted/ConsoleSelfHosted.csproj" />
+        <Project Path="examples/WebFluid/WebFluid.csproj" />
         <Project Path="examples/WebHangfire/WebHangfire.csproj" />
         <Project Path="examples/WebIdentity/WebIdentity.csproj" />
         <Project Path="examples/WebMassTransit/WebMassTransit.csproj" />
