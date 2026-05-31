@@ -13,6 +13,7 @@ Unofficial .NET SDK for [useSend](https://usesend.com) — an open-source altern
 | `UseSend.Identity` | [![NuGet](https://img.shields.io/nuget/v/UseSend.Identity.svg)](https://www.nuget.org/packages/UseSend.Identity) | ASP.NET Core Identity `IEmailSender` / `IEmailSender<TUser>` backed by useSend |
 | `UseSend.OpenTelemetry` | [![NuGet](https://img.shields.io/nuget/v/UseSend.OpenTelemetry.svg)](https://www.nuget.org/packages/UseSend.OpenTelemetry) | Distributed tracing (ActivitySource) and metrics (request count + duration) |
 | `UseSend.Razor` | [![NuGet](https://img.shields.io/nuget/v/UseSend.Razor.svg)](https://www.nuget.org/packages/UseSend.Razor) | Razor (.cshtml) template rendering via [RazorLight](https://github.com/toddams/RazorLight) |
+| `UseSend.Fluid` | [![NuGet](https://img.shields.io/nuget/v/UseSend.Fluid.svg)](https://www.nuget.org/packages/UseSend.Fluid) | Liquid template rendering via [Fluid](https://github.com/sebastienros/fluid) |
 | `UseSend.Webhooks` | [![NuGet](https://img.shields.io/nuget/v/UseSend.Webhooks.svg)](https://www.nuget.org/packages/UseSend.Webhooks) | Webhook signature verification and typed event parsing |
 
 ---
@@ -185,6 +186,27 @@ var html = await renderer.RenderAsync("Emails/Welcome", new WelcomeModel { Name 
 ```
 
 → [Full documentation](src/UseSend.Razor/README.md)
+
+---
+
+## UseSend.Fluid
+
+Compile and render Liquid (`.liquid`) email templates using the [Fluid](https://github.com/sebastienros/fluid) engine — simpler syntax, safe for designers and marketers.
+
+```bash
+dotnet add package UseSend.Fluid
+```
+
+```csharp
+builder.Services.AddUseSendFluid("/path/to/liquid/templates");
+
+// Inject IEmailTemplateRenderer and render before sending
+var html = await renderer.RenderAsync("Emails/Welcome", new { Name = "Alice" });
+```
+
+Both `UseSend.Razor` and `UseSend.Fluid` implement the same `IEmailTemplateRenderer` interface — swap between them by changing only the registration call.
+
+→ [Full documentation](src/UseSend.Fluid/README.md)
 
 ---
 

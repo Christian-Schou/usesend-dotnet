@@ -25,6 +25,10 @@
     "src/UseSend.Razor": {
       "component": "UseSend.Razor",
       "changelog-path": "CHANGELOG.md"
+    },
+    "src/UseSend.Fluid": {
+      "component": "UseSend.Fluid",
+      "changelog-path": "CHANGELOG.md"
     }
   }
 }
