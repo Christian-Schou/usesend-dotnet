@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend-v1.4.0...UseSend-v1.5.0) (2026-05-31)
+
+
+### Features
+
+* **liquid:** Add Liquid templating package ([#48](https://github.com/Christian-Schou/usesend-dotnet/issues/48)) ([fc999b5](https://github.com/Christian-Schou/usesend-dotnet/commit/fc999b542e8d195304ef87d1cf78fd9c106dc2cd))
+
 ## [1.4.0](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend-v1.3.0...UseSend-v1.4.0) (2026-05-29)
 
 
