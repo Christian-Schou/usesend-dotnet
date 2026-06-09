@@ -1,9 +1,9 @@
 {
-  "src/UseSend": "1.5.0",
+  "src/UseSend": "1.5.1",
   "src/UseSend.FluentEmail": "1.3.0",
-  "src/UseSend.Webhooks": "1.3.2",
+  "src/UseSend.Webhooks": "1.3.3",
   "src/UseSend.Identity": "1.1.0",
   "src/UseSend.OpenTelemetry": "1.1.0",
   "src/UseSend.Razor": "1.2.0",
-  "src/UseSend.Fluid": "1.1.0"
+  "src/UseSend.Fluid": "1.1.1"
 }
