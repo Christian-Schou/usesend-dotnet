@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Razor-v1.2.0...UseSend.Razor-v1.2.1) (2026-06-09)
+
+
+### Bug Fixes
+
+* **security:** Microsoft Security Advisory CVE-2024-43483 ([#60](https://github.com/Christian-Schou/usesend-dotnet/issues/60)) ([491a251](https://github.com/Christian-Schou/usesend-dotnet/commit/491a2516b25ef94752a40ffe18e0a378a903b9e2))
+
 ## [1.2.0](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Razor-v1.1.0...UseSend.Razor-v1.2.0) (2026-05-31)
 
 
