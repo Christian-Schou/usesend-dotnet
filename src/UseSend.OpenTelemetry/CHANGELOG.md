@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.OpenTelemetry-v1.1.0...UseSend.OpenTelemetry-v1.1.1) (2026-06-09)
+
+
+### Bug Fixes
+
+* **security:** Fix Excessive memory allocation when parsing OpenTelemetry propagation headers ([#58](https://github.com/Christian-Schou/usesend-dotnet/issues/58)) ([9000772](https://github.com/Christian-Schou/usesend-dotnet/commit/9000772b11255766d7632bbac9e7d3027e0dc606))
+
 ## [1.1.0](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.OpenTelemetry-v1.0.0...UseSend.OpenTelemetry-v1.1.0) (2026-05-29)
 
 
