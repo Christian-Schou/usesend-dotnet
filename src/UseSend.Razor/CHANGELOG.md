@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Razor-v1.2.1...UseSend.Razor-v1.2.2) (2026-06-12)
+
+
+### Bug Fixes
+
+* **deps:** Bump Microsoft.Extensions.Caching.Memory from 10.0.8 to 10.0.9 ([#65](https://github.com/Christian-Schou/usesend-dotnet/issues/65)) ([68987c4](https://github.com/Christian-Schou/usesend-dotnet/commit/68987c42bb9de4106ef6b5610357f8b0d55e3932))
+
 ## [1.2.1](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Razor-v1.2.0...UseSend.Razor-v1.2.1) (2026-06-09)
 
 
