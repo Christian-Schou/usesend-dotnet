@@ -39,7 +39,7 @@ jobs:
     if: needs.release-please.outputs.usesend_released == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: |
@@ -56,7 +56,7 @@ jobs:
     if: needs.release-please.outputs.fluentemail_released == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: |
@@ -73,7 +73,7 @@ jobs:
     if: needs.release-please.outputs.webhooks_released == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: |
@@ -90,7 +90,7 @@ jobs:
     if: needs.release-please.outputs.identity_released == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: |
@@ -107,7 +107,7 @@ jobs:
     if: needs.release-please.outputs.opentelemetry_released == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: |
@@ -124,7 +124,7 @@ jobs:
     if: needs.release-please.outputs.razor_released == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: |
@@ -141,7 +141,7 @@ jobs:
     if: needs.release-please.outputs.fluid_released == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: |
