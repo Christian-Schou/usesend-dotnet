@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend-v1.5.2...UseSend-v1.5.3) (2026-07-20)
+
+
+### Bug Fixes
+
+* **deps:** Bump Microsoft.AspNetCore.WebUtilities from 8.0.28 to 8.0.29 ([#80](https://github.com/Christian-Schou/usesend-dotnet/issues/80)) ([02eb423](https://github.com/Christian-Schou/usesend-dotnet/commit/02eb4238533b0dea37313d19c91203a2a18843f4))
+
 ## [1.5.2](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend-v1.5.1...UseSend-v1.5.2) (2026-06-12)
 
 
