@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.5](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Webhooks-v1.3.4...UseSend.Webhooks-v1.3.5) (2026-07-27)
+
+
+### Bug Fixes
+
+* **deps:** Bump Microsoft.Extensions.DependencyInjection.Abstractions from 10.0.9 to 10.0.10 ([#86](https://github.com/Christian-Schou/usesend-dotnet/issues/86)) ([6eb4139](https://github.com/Christian-Schou/usesend-dotnet/commit/6eb4139c729bf89f86c890f4885909633094058d))
+
 ## [1.3.4](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Webhooks-v1.3.3...UseSend.Webhooks-v1.3.4) (2026-06-19)
 
 

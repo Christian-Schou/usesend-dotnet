@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Fluid-v1.1.2...UseSend.Fluid-v1.1.3) (2026-07-27)
+
+
+### Bug Fixes
+
+* **deps:** Bump Microsoft.Extensions.DependencyInjection.Abstractions from 10.0.9 to 10.0.10 ([#86](https://github.com/Christian-Schou/usesend-dotnet/issues/86)) ([6eb4139](https://github.com/Christian-Schou/usesend-dotnet/commit/6eb4139c729bf89f86c890f4885909633094058d))
+
 ## [1.1.2](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Fluid-v1.1.1...UseSend.Fluid-v1.1.2) (2026-06-19)
 
 
