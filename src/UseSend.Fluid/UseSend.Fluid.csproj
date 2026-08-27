@@ -23,7 +23,7 @@
 
     <ItemGroup>
         <!-- Fluid.Core targets netstandard2.0 — same version for all TFMs -->
-        <PackageReference Include="Fluid.Core" Version="2.31.0"/>
+        <PackageReference Include="Fluid.Core" Version="2.40.0"/>
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
