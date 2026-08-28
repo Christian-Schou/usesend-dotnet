@@ -5,5 +5,5 @@
   "src/UseSend.Identity": "1.1.0",
   "src/UseSend.OpenTelemetry": "1.1.3",
   "src/UseSend.Razor": "1.2.4",
-  "src/UseSend.Fluid": "1.1.4"
+  "src/UseSend.Fluid": "1.1.5"
 }
