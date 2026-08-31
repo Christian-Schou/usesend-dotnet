@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Fluid-v1.1.4...UseSend.Fluid-v1.1.5) (2026-08-28)
+
+
+### Bug Fixes
+
+* **deps:** Bump Fluid.Core from 2.31.0 to 2.40.0 ([#101](https://github.com/Christian-Schou/usesend-dotnet/issues/101)) ([b50566b](https://github.com/Christian-Schou/usesend-dotnet/commit/b50566b754728c17b4dbc798870001e6c02d0452))
+
 ## [1.1.4](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.Fluid-v1.1.3...UseSend.Fluid-v1.1.4) (2026-08-21)
 
 
