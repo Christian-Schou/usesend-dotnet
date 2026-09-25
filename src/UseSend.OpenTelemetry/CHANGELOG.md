@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.OpenTelemetry-v1.1.4...UseSend.OpenTelemetry-v1.1.5) (2026-09-25)
+
+
+### Bug Fixes
+
+* **deps:** Bump OpenTelemetry.Api from 1.18.0 to 1.19.1 ([#128](https://github.com/Christian-Schou/usesend-dotnet/issues/128)) ([20b6ef5](https://github.com/Christian-Schou/usesend-dotnet/commit/20b6ef5bb1a240dcdac3510d977bf7df29f94a4c))
+
 ## [1.1.4](https://github.com/Christian-Schou/usesend-dotnet/compare/UseSend.OpenTelemetry-v1.1.3...UseSend.OpenTelemetry-v1.1.4) (2026-09-04)
 
 
